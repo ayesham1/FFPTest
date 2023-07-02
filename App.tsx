@@ -1,12 +1,16 @@
 import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View, Image, TouchableOpacity } from 'react-native';
+import { StyleSheet, Text, View, Image, TouchableOpacity, Dimensions } from 'react-native';
 import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
 import { useNavigation } from '@react-navigation/native';
 import { NativeStackNavigationProp } from '@react-navigation/native-stack';
+import ChatBot from './src/ChatBot';
+import ChatbotTemplate from './src/ChatBotTemplate';
+import Email from './src/Email';
 import NextPage from './src/NextPage';
 const Stack = createStackNavigator();
-
+const width = Dimensions.get('window');
+const height = Dimensions.get('window');
 const HomePage = () =>{
   return(
     <View style={styles.container}>
@@ -66,6 +70,9 @@ export default function App() {
     >
       <Stack.Screen name="Screen1" component={HomePage} />
       <Stack.Screen name="Screen2" component={NextPage} />
+      <Stack.Screen name="Screen3" component={Email} />
+      <Stack.Screen name="Screen4" component={ChatbotTemplate}/>
+      <Stack.Screen name="Screen5" component={ChatBot} />
     </Stack.Navigator>
   </NavigationContainer>
   );
