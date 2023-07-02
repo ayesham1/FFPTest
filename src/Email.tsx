@@ -6,7 +6,7 @@ import { NativeStackNavigationProp } from '@react-navigation/native-stack';
 const Email = () => {
   const navigation = useNavigation<NativeStackNavigationProp<any>>();
   const handleButtonPress = () =>{
-    navigation.navigate('Screen5');
+    navigation.navigate('Screen4');
   }
   const [showSignUp, setShowSignUp] = useState(false);
   
